@@ -37,6 +37,14 @@ Do not create a single large commit covering unrelated schema changes, API chang
 - Do not introduce new ad hoc JSON contracts for app-facing interfaces unless explicitly approved.
 - Treat `.proto` definitions as the source of truth for request/response contracts.
 
+## Scaffold Layout
+
+- `proto/` stores PB contracts, with `common/` for shared types and `live/<domain>/` for business domains.
+- `k8s/` stores Kubernetes manifests in `base/` and `overlays/{dev,test,prod}`.
+- `src/main/java/com/test/test/domain/` stores domain-oriented backend code.
+- `src/main/resources/` stores profile-based Spring configuration and `db/migration/` placeholders.
+- `docs/architecture/2026-04-20-backend-scaffold-conventions.md` is the scaffold source document.
+
 ## Spring Boot Expectations
 
 - Keep controllers thin.
