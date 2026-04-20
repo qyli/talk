@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: live-app-backend
+  labels:
+    app.kubernetes.io/name: live-app-backend
+    app.kubernetes.io/component: backend
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: live-app-backend
+  ports:
+    - name: http
+      port: 80
+      targetPort: http

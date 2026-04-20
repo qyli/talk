@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+images:
+  - name: live-app-backend
+    newTag: test
+patches:
+  - path: patch-deployment.yaml
+  - path: patch-ingress.yaml
