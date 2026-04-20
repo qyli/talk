@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package live.common;
+
+message ErrorDetail {
+  string code = 1;
+  string message = 2;
+}

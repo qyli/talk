@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package live.auth.v1;
+
+import "live/auth/auth_model.proto";
+
+service AuthService {
+  rpc SendSmsCode(SendSmsCodeRequest) returns (SendSmsCodeResponse);
+  rpc LoginBySms(LoginBySmsRequest) returns (LoginBySmsResponse);
+  rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
+  rpc Logout(LogoutRequest) returns (LogoutResponse);
+  rpc GetCurrentUser(GetCurrentUserRequest) returns (GetCurrentUserResponse);
+}

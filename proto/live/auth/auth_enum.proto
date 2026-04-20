@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package live.auth.v1;
+
+enum SmsScene {
+  SMS_SCENE_UNSPECIFIED = 0;
+  SMS_SCENE_LOGIN = 1;
+}
+
+enum AccountStatus {
+  ACCOUNT_STATUS_UNSPECIFIED = 0;
+  ACCOUNT_STATUS_ACTIVE = 1;
+  ACCOUNT_STATUS_DISABLED = 2;
+  ACCOUNT_STATUS_BANNED = 3;
+  ACCOUNT_STATUS_DELETED = 4;
+}
+
+enum DeviceType {
+  DEVICE_TYPE_UNSPECIFIED = 0;
+  DEVICE_TYPE_ANDROID = 1;
+  DEVICE_TYPE_IOS = 2;
+  DEVICE_TYPE_WEB = 3;
+}

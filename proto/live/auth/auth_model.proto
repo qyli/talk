@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package live.auth.v1;
+
+import "live/auth/auth_enum.proto";
+import "common/metadata.proto";
+
+message SendSmsCodeRequest {
+  string mobile = 1;
+  SmsScene scene = 2;
+  live.common.RequestMetadata metadata = 3;
+}
+
+message SendSmsCodeResponse {
+  bool sent = 1;
+}
+
+message LoginBySmsRequest {
+  string mobile = 1;
+  string sms_code = 2;
+  string device_id = 3;
+  DeviceType device_type = 4;
+  live.common.RequestMetadata metadata = 5;
+}
+
+message LoginBySmsResponse {
+  TokenPair token_pair = 1;
+  CurrentUser current_user = 2;
+}
+
+message RefreshTokenRequest {
+  string refresh_token = 1;
+  live.common.RequestMetadata metadata = 2;
+}
+
+message RefreshTokenResponse {
+  TokenPair token_pair = 1;
+}
+
+message LogoutRequest {
+  string access_token = 1;
+  live.common.RequestMetadata metadata = 2;
+}
+
+message LogoutResponse {
+  bool success = 1;
+}
+
+message GetCurrentUserRequest {
+  live.common.RequestMetadata metadata = 1;
+}
+
+message GetCurrentUserResponse {
+  CurrentUser current_user = 1;
+}
+
+message TokenPair {
+  string access_token = 1;
+  string refresh_token = 2;
+  int64 access_token_expires_at_ms = 3;
+}
+
+message CurrentUser {
+  string user_id = 1;
+  string nickname = 2;
+  string avatar_url = 3;
+  AccountStatus account_status = 4;
+}

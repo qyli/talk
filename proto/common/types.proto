@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package live.common;
+
+message TimeRange {
+  int64 start_time_ms = 1;
+  int64 end_time_ms = 2;
+}
